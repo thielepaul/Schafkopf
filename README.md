@@ -77,6 +77,23 @@ This is a .NET 6.0 core project. To set up your development environment:
 - If you want to play this on a single computer during development, append `&session=new` to the URL to create a new session instead of reconnecting to an existing one.
 - For troubleshooting setup issues, see [AGENTS.md](AGENTS.md) which contains detailed setup instructions and solutions for common problems.
 
+### Troubleshooting Port Conflicts
+
+**macOS Users**: If HTTP on port 5000 returns a 403 Forbidden error, it's likely that Apple's **AirTunes (AirPlay) server** is using port 5000.
+
+**Solution**: Use HTTPS instead:
+```
+https://localhost:5001
+```
+
+Accept the self-signed certificate warning when prompted.
+
+**Alternative**: Disable AirPlay Receiver on your Mac:
+1. System Settings → General → AirDrop & Handoff → Turn off AirPlay Receiver
+2. Or: System Settings → General → Sharing → Turn off AirPlay Receiver
+
+Then HTTP on port 5000 will be available.
+
 ## Server Installation
 In case you want to run the application behind a reverse proxy using nginx, you could use the following configuration to handle the required websocket properly:
 ```

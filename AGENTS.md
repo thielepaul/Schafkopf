@@ -76,6 +76,28 @@ If ports 5000 or 5001 are already in use, you can specify custom ports:
 dotnet run --urls "http://localhost:5002;https://localhost:5003"
 ```
 
+#### macOS AirTunes Conflict
+
+On macOS, Apple's AirTunes (AirPlay) server uses port 5000 by default. If you get a 403 Forbidden error when accessing `http://localhost:5000`, this is likely the cause.
+
+**Solutions**:
+
+1. **Use HTTPS** (recommended for development):
+   ```
+   https://localhost:5001
+   ```
+   Accept the self-signed certificate when prompted.
+
+2. **Disable AirPlay Receiver**:
+   - Go to System Settings → General → AirDrop & Handoff
+   - Turn off "AirPlay Receiver"
+   - Or: System Settings → General → Sharing → Turn off "AirPlay Receiver"
+
+3. **Use custom ports**:
+   ```bash
+   dotnet run --urls "http://localhost:5010;https://localhost:5011"
+   ```
+
 ## Watch Mode Development
 
 To run the application in watch mode (automatically restarts on code changes):
