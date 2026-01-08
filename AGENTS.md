@@ -15,13 +15,17 @@ This guide provides step-by-step instructions for AI agents and automated system
 
 **Important**: Dev containers have an isolated environment. Git configuration from your host system is NOT automatically passed to the container.
 
-**Check your git configuration inside the container:**
+**ALWAYS CHECK GIT CONFIGURATION FIRST**:
+
+Before making any commits, verify git is configured by running:
 ```bash
 git config user.name
 git config user.email
 ```
 
-If these are empty, configure git inside the container:
+Both commands should return non-empty values. If either is empty, configure git immediately before proceeding with any git operations.
+
+**If configuration is missing**, configure git inside the container:
 ```bash
 git config user.email "your-email@example.com"
 git config user.name "Your Name"
