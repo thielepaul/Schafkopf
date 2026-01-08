@@ -65,6 +65,8 @@ This is a .NET 6.0 core project. To set up your development environment:
    - HTTP: http://localhost:5000
    - HTTPS: https://localhost:5001
 
+   **Note for Dev Container Users**: If you're running this in VS Code Dev Container, the container is configured with port forwarding. VS Code will automatically detect the running application and may show a notification to open it.
+
 6. **Watch Mode** (for development with auto-reload):
    ```bash
    dotnet watch run

@@ -52,6 +52,8 @@ The application will start listening on:
 - **HTTP**: http://localhost:5000
 - **HTTPS**: https://localhost:5001
 
+**Dev Container Note**: The VS Code dev container is configured with port forwarding (`devcontainer.json`), which automatically maps container ports 5000 and 5001 to your host machine. VS Code will show a prompt to open the application when it detects the ports are in use.
+
 ## Troubleshooting
 
 ### HTTPS Certificate Error
