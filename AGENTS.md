@@ -7,8 +7,34 @@ This guide provides step-by-step instructions for AI agents and automated system
 - .NET SDK 6.0 or higher installed
 - Node.js/npm (for frontend dependencies)
 - Git
+- **For dev containers**: Git must be configured (see "Git Configuration" section below)
 
 ## Initial Setup
+
+### Git Configuration (Dev Container)
+
+**Important**: Dev containers have an isolated environment. Git configuration from your host system is NOT automatically passed to the container.
+
+**Check your git configuration inside the container:**
+```bash
+git config user.name
+git config user.email
+```
+
+If these are empty, configure git inside the container:
+```bash
+git config user.email "your-email@example.com"
+git config user.name "Your Name"
+```
+
+**Alternative**: Set globally on your host machine, and VS Code's Dev Container may share it (but this is not guaranteed):
+```bash
+# On your HOST machine (not in container)
+git config --global user.email "your-email@example.com"
+git config --global user.name "Your Name"
+```
+
+Then restart the dev container in VS Code for the configuration to potentially be shared.
 
 ### 1. Clone the Repository
 
