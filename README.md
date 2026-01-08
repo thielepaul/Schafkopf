@@ -33,8 +33,47 @@ Note, that this is a German game so everything in the game is in German.
 ![screenshot of app in dark mode](screenshots/dark.png "Dark Mode")
 
 ## Development
-This is a .NET core project, check out https://dotnet.microsoft.com/download for more information about .NET core.
-If you want to play this on a single computer during development, append `&session=new` to the URL to create a new session instead of reconnecting to an existing one.
+
+### Setup Instructions
+
+This is a .NET 6.0 core project. To set up your development environment:
+
+1. **Install .NET SDK**: Check out https://dotnet.microsoft.com/download for more information about .NET
+
+2. **Generate HTTPS Developer Certificate** (required):
+   ```bash
+   dotnet dev-certs https
+   ```
+   This creates a self-signed certificate needed to run the application locally. You only need to do this once per development machine.
+
+3. **Restore NuGet Packages**:
+   ```bash
+   dotnet restore
+   ```
+
+4. **Build the Project**:
+   ```bash
+   dotnet build
+   ```
+
+5. **Run the Application**:
+   ```bash
+   cd Schafkopf
+   dotnet run
+   ```
+   The application will be available at:
+   - HTTP: http://localhost:5000
+   - HTTPS: https://localhost:5001
+
+6. **Watch Mode** (for development with auto-reload):
+   ```bash
+   dotnet watch run
+   ```
+
+### Development Tips
+
+- If you want to play this on a single computer during development, append `&session=new` to the URL to create a new session instead of reconnecting to an existing one.
+- For troubleshooting setup issues, see [AGENTS.md](AGENTS.md) which contains detailed setup instructions and solutions for common problems.
 
 ## Server Installation
 In case you want to run the application behind a reverse proxy using nginx, you could use the following configuration to handle the required websocket properly:
