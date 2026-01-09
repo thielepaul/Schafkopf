@@ -1,8 +1,6 @@
 # Schafkopf
 This is an Open Source implementation of the bavarian card game **Schafkopf**.
 
-Feel free to check out the demo at: https://schafkopf.p4u1.de
-
 Or run it on your own server with docker: `docker run -p 8080:8080 ghcr.io/thielepaul/schafkopf:master`
 
 What can this app offer you:
