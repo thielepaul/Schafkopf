@@ -3,7 +3,7 @@ This is an Open Source implementation of the bavarian card game **Schafkopf**.
 
 Feel free to check out the demo at: https://schafkopf.p4u1.de
 
-Or run it on your own server with docker: `docker run -p 9080:80 -p 9443:443 thielepaul/schafkopf`
+Or run it on your own server with docker: `docker run -p 8080:8080 ghcr.io/thielepaul/schafkopf:master`
 
 What can this app offer you:
 * Play Schafkopf with friends in their browser
@@ -31,6 +31,32 @@ Note, that this is a German game so everything in the game is in German.
 ## Development
 This is a .NET core project, check out https://dotnet.microsoft.com/download for more information about .NET core.
 If you want to play this on a single computer during development, append `&session=new` to the URL to create a new session instead of reconnecting to an existing one.
+
+## Tasks
+
+### watch
+
+```shell
+dotnet watch run --project Schafkopf/Schafkopf.csproj
+```
+
+### run
+
+```shell
+dotnet run --project Schafkopf/Schafkopf.csproj
+```
+
+### build
+
+```shell
+dotnet build
+```
+
+### test
+
+```shell
+dotnet test
+```
 
 ## Server Installation
 In case you want to run the application behind a reverse proxy using nginx, you could use the following configuration to handle the required websocket properly:
